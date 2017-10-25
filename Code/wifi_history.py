@@ -49,7 +49,7 @@ def init(wifiId):
 
 
 if __name__ == "__main__":
-    file = file("first_round_user_shop_behavior.csv","r")
+    file = file("../Data/first_round_user_shop_behavior.csv","r")
     lines = file.readlines()
     for line in lines:
         line = line.strip()
@@ -144,5 +144,5 @@ if __name__ == "__main__":
             for ele in wifi_shopSorted:
                 wifi_map[wifiId]["wifi_shopTop3"].append(ele[0])
 
-    output = open("wifi_history_feature_0801_0817.pkl", "wb")
+    output = open("../Feature/wifi_history_feature_0801_0817.pkl", "wb")
     cPickle.dump(wifi_map, output)

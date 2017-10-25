@@ -12,7 +12,7 @@ shopMap = dict() # 记录shop的特征
 mallMap = dict() # 记录mall的相关特征
 
 def LoadShopInfo():
-    Infile = file("first_round_shop_info.csv", "r")
+    Infile = file("../Data/first_round_shop_info.csv", "r")
     lines = Infile.readlines()
     for line in lines:
         line = line.strip()
@@ -67,7 +67,7 @@ def distance(x1, y1, x2, y2):
 
 if __name__ == "__main__":
     LoadShopInfo()
-    file = file("first_round_user_shop_behavior.csv", "r")
+    file = file("../Data/first_round_user_shop_behavior.csv", "r")
     startTime = "2017-08-00"
     endTime = "2017-09-01"
     lines = file.readlines()
@@ -174,7 +174,7 @@ if __name__ == "__main__":
             for ele in sortedList:
                 shopMap[shopId]["time_top3List"].append(ele[0])
 
-    output = open("shop_history_feature_0801_0831.pkl", "wb")
+    output = open("../Feature/shop_history_feature_0801_0831.pkl", "wb")
     cPickle.dump(shopMap, output)
 
     #cPickle.dump(mallMap, open("ss.pkl", "wb"))
